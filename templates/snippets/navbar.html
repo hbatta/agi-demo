@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a href="/" class="navbar-brand mb-0 h1">AGI</a>
+    {% if request.user.is_authenticated %}
+        <span class="navbar-brand mb-0 h1" style="align-content: right;">
+            <a href="{% url 'PlacementPortal:logout' %}" style="color: #ffffff;">LOGOUT</a>
+        </span>
+    {% else %}
+        <span class="navbar-brand mb-0 h1" style="align-content: right;">X</span>
+    {% endif %}
+</nav>

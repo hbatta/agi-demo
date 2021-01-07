@@ -1,0 +1,78 @@
+<head>
+        <meta charset="UTF-8">
+        <title>Student List</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <style>
+
+            #id_gender li,#id_caste li,#id_department li{
+                display: inline;
+                text-decoration: none;
+                margin: 5px;
+
+            }
+
+            #id_gender, #id_caste,#id_department{
+                display: inline;
+                margin: 0px;
+            }
+
+            .content{
+                align-content: center;
+                align-items: center;
+
+            }
+
+            .jumbotron{
+                margin-top: 50px;
+            }
+
+
+        </style>
+
+    </head>
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+        <div class="jumbotron">
+            <form  method = "POST">
+                {% csrf_token %}
+                <div class="main-container">
+                    <div class="content">
+                        <label id="gender">Gender <span>{{ form.gender }}</span>
+                        </label>
+                    </div>
+                <div>
+                    <label id="caste">Caste <span>{{ form.caste }}</span>
+                    </label>
+                </div>
+                <div>
+                    <label id="department">Department <span>{{ form.department }}</span>
+                    </label>
+                </div>
+                <div>
+                    <label id="tenth">Tenth Marks<span id="span_tenth">{{ form.tenth }}</span>
+                    </label>
+                </div>
+                <div>
+                    <label id="inter">Inter Marks<span id="span_inter">{{ form.inter }}</span>
+                    </label>
+                </div>
+                <div>
+                    <label id="btech">B.Tech Marks<span id="span_btech">{{ form.btech }}</span>
+                    </label>
+                </div>
+                <div>
+                    <label id="backlogs">Backlogs<span id="span_backlogs">{{ form.backlogs }}</span>
+                    </label>
+                </div>
+
+             <input type="submit" class="btn btn-success" value = "Get Students"/>
+                </div>
+
+         </form>
+        </div>
+    </div>
+{%  endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title_text %}AGI{% endblock title_text %}</title>
+    {% include 'css.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/PlacementPortal/style.css' %}">
+</head>
+<body>
+{% include "snippets/navbar.html" %}
+<div class="container-fluid">
+    {% if request.user.is_authenticated %}
+        {% include "snippets/toobar.html" %}
+    {% endif %}
+    {% block content %}
+        <h1 style="text-align: center;"><b>AGI DEPARTMENT PLACEMENT PORTAL</b></h1>
+    {% endblock content %}
+</div>
+
+{% include 'js.html' %}
+</body>
+</html>

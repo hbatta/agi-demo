@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="">
+        <br>
+        <br>
+        <form method="post" class="form-control">{% csrf_token %}
+            <p style="color: red;" class="form-control">Are you sure you want to delete "{{ object.name }}"?</p>
+            <p style="color: red;" class="form-control">All the {{ object.acronym }} students will be deleted.</p>
+            <input class="btn-danger form-control" type="submit" value="Confirm"/>
+        </form>
+    </div>
+
+{% endblock content %}

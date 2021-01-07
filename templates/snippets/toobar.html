@@ -1,0 +1,24 @@
+<head>
+    <style>
+        li {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand mb-0 h3" href="#">Menu</a>
+        </div>
+
+
+        <ul class="nav navbar-nav h5 navbar-right" style="align-content: right;">
+            <li><a href="{% url 'PlacementPortal:department_list' %}">Departments</a></li>
+            <li><a href="{% url 'PlacementPortal:student_file_upload' %}">StudentUpload</a></li>
+            <li><a href="{% url 'PlacementPortal:marks_file_upload' %}">MarksUpload</a></li>
+            <li><a href="{% url 'PlacementPortal:select_query' %}">QueryStudents</a></li>
+        </ul>
+    </div>
+</nav>
+

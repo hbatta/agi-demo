@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>H.T.No</th>
+            <th>Department</th>
+            <th>D.O.B</th>
+            <th>Gender</th>
+            <th>Caste</th>
+            <th>Tenth%</th>
+            <th>Inter%</th>
+            <th>BTech%</th>
+            <th>Backlogs</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        {% for student in student_list %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>
+                    <a href="{% url 'PlacementPortal:student_marks' dept_id=student.department_id pk=student.id %}">{{ student.full_name }}</a>
+                </td>
+                <td>{{ student.hall_ticket_number }}</td>
+                <td>{{ student.department__acronym }}</td>
+                <td>{{ student.date_of_birth }}</td>
+                {% if student.gender == True %}
+                    <td>Male</td>
+                {% else %}
+                    <td>Female</td>
+                {% endif %}
+                <td>{{ student.caste }}</td>
+                <td>{{ student.tenth_marks }}</td>
+                <td>{{ student.inter_marks }}</td>
+                <td>{{ student.btech_marks }}</td>
+                <td>{{ student.backlogs }}</td>
+                <td>
+                    <a href="{% url 'PlacementPortal:student_contact' dept_id=student.department_id pk=student.id %}">Contact</a>
+                </td>
+                <td><a href="{% url 'PlacementPortal:department_student_edit' dept_id=student.department_id pk=student.id %}">Edit</a></td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

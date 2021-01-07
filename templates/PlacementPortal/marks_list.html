@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h4>{{ student.full_name }} - {{ student.hall_ticket_number }}</h4>
+    <br>
+        <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Internal Marks</th>
+            <th>External Marks</th>
+            <th>Total</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for marks in marks_list %}
+            <tr>
+                <td>{{ marks.subject_code }}</td>
+                <td>{{ marks.subject_name }}</td>
+                <td>{{ marks.internal_marks }}</td>
+                <td>{{ marks.external_marks }}</td>
+                <td>{{ marks.total_marks }}</td>
+                <td>{{ marks.result }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

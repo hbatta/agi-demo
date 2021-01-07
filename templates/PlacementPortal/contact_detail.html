@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+    <h4>{{ student_detail.full_name }}</h4>
+    <h4>{{ student_detail.hall_ticket_number }}</h4>
+    <br>
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Email</th>
+            <td>{{ student_contact.email }}</td>
+        </tr>
+        <tr>
+            <th>Phone number</th>
+            <td>{{ student_contact.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{ student_contact.address }}</td>
+        </tr>
+        <tr>
+            <th>Guardian/parent Name</th>
+            <td>{{ student_contact.guardian_parent_name }}</td>
+        </tr>
+        <tr>
+            <th>Guardian/parent Contact</th>
+            <td>{{ student_contact.guardian_parent_contact }}</td>
+        </tr>
+        <tr>
+            <th>Guardian/parent Profession</th>
+            <td>{{ student_contact.guardian_parent_profession }}</td>
+        </tr>
+    </table>
+{% endblock content %}
